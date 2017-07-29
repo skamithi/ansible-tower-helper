@@ -1,7 +1,2 @@
 ---
-- hosts: localhost
-  connection: local
-  gather_facts: false
-  roles:
-    - organizations
-    - users
+- include: "tower-{{ tower_action }}.yml"
