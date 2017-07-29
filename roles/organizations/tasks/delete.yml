@@ -1,5 +1,9 @@
+---
 - name: Delete Tower Organizations
-  command: "tower-cli organization delete -n {{ item.name }} -p {{ tower_password }} -h {{ tower_host }} -u {{ tower_username }}"
+  tower_organization:
+    name: "{{ item.name }}"
+    tower_password: "{{ tower_password }}"
+    tower_username: "{{ tower_username }}"
+    tower_host: "{{ tower_host }}"
+    state: absent
   with_items: "{{ tower_orgs }}"
-  changed_when: "{{ tower_org_output.stdout_lines[0] == 'OK. (changed: true)' }}"
-  register: tower_org_output
