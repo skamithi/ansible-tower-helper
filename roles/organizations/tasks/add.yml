@@ -1,0 +1,5 @@
+- name: Create Tower Organizations
+  command: "tower-cli organization create -n {{ item.name }} -d '{{ item.description }}' -p {{ tower_password }} -h {{ tower_host }} -u {{ tower_username }}"
+  with_items: "{{ tower_orgs }}"
+  changed_when: tower_org_output.stdout_lines[0] == "Resource changed."
+  register: tower_org_output

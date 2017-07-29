@@ -1,0 +1,16 @@
+# Default action is add
+tower_action: 'add'
+
+# tower_username: admin
+# tower_password: tower
+
+# tower_users:
+#   - username: adminuser
+#     password: tower
+#     isadmin: true
+#     first_name: Admin
+#     last_name: User
+#     organization: linuxsimba
+#     teams:
+#         - teamA
+#         - teamB

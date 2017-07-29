@@ -1,0 +1,6 @@
+- name: Add Tower Users
+  command: "tower-cli user create --username {{ item.username }} --password {{ item.password }} --email {{ item.email|default(item.username + '@example.com') }} --first-name {{ item.first_name }} --last-name {{ item.last_name }} --is-superuser {{ item.isadmin|default(false) }} -p {{ tower_password }} -u {{ tower_username }} -h {{ tower_host }}"
+  with_items: "{{ tower_users }}"
+  changed_when: tower_user_output.stdout_lines[0] == "Resource changed."
+  register: tower_user_output
+
