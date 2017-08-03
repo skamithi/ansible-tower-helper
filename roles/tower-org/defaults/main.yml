@@ -1,0 +1,16 @@
+tower_action: 'add'
+
+# Define as extra vars -
+# tower_orgs:
+#  - name: linuxsimba
+-#    description: "Linuxsimba Org"
+----
+# Default action to take when acting on an Tower org. Options are "create" and "delete"
+tower_action: 'create'
+
+# Define listing of Tower orgs. Place a listing in extra vars or group_vars
+# The structure is shown below
+# tower_orgs:
+#  - name: linuxsimba
+#    description: "Linuxsimba Org"
+

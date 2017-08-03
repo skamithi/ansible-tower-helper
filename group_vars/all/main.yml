@@ -1,4 +1,3 @@
-tower_action: 'add'
 tower_orgs:
   - name: linuxsimba
     description: "Linuxsimba Org"
@@ -10,12 +9,12 @@ tower_users:
    first_name: Admin
    last_name: User
    organization: linuxsimba
+   org_role: member
 
  - username: toweruser1
    password: tower
-   first_name: Tower
-   last_name: User1
    organization: linuxsimba
+   org_role: member
 
 tower_username: admin
 tower_password: tower

@@ -1,6 +1,9 @@
-- name: Delete Tower Users
-  command: "tower-cli user delete --username {{ item.username }} -p {{ tower_password }} -u {{ tower_username }} -h {{ tower_host }}"
+---
+- name: delete Tower Users
+  tower_user:
+    username: "{{ item.username }}"
+    state: absent
+    tower_host: "{{ tower_host }}"
+    tower_username: "{{ tower_username }}"
+    tower_password: "{{ tower_password }}"
   with_items: "{{ tower_users }}"
-  changed_when: "{{ tower_user_output.stdout_lines[0] == 'OK. (changed: true)' }}"
-  register: tower_user_output
-
